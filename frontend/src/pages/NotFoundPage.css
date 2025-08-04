@@ -1,0 +1,78 @@
+/* ========================================== */
+/* Styles for NotFoundPage                    */
+/* Based on the reference DashboardPage style */
+/* ========================================== */
+
+/* --- Page Container --- */
+.not-found-page-container {
+    max-width: 600px; /* Suitable width for a simple message */
+    margin: 5rem auto; /* Extra vertical margin */
+    padding: 3rem; /* Generous padding */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center; /* Center all content */
+  }
+  
+  /* --- Header (h2) --- */
+  .not-found-page-container h2 {
+    color: #e74c3c; /* Use a distinct error-like color */
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem; /* Make it prominent */
+    font-weight: 600;
+  }
+  
+  /* --- Paragraph (p) --- */
+  .not-found-page-container p {
+    color: #555; /* Standard text color */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem; /* Space before the link */
+  }
+  
+  /* --- Link (a tag rendered by Link) --- */
+  .not-found-page-container a {
+    display: inline-block; /* Allows padding and styling */
+    background: linear-gradient(to right, #5c67e3, #4b5cdc); /* Theme button gradient */
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem; /* Button-like padding */
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .not-found-page-container a:hover {
+    background: linear-gradient(to right, #4b5cdc, #3a4fd1); /* Darker gradient */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 600px) {
+    .not-found-page-container {
+      margin: 3rem 1rem;
+      padding: 2rem 1.5rem;
+    }
+  
+    .not-found-page-container h2 {
+      font-size: 2rem;
+    }
+  
+    .not-found-page-container p {
+      font-size: 1rem;
+    }
+  
+    .not-found-page-container a {
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }

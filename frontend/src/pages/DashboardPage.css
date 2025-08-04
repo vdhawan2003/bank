@@ -1,0 +1,138 @@
+/* DashboardPage.css */
+
+.dashboard-container {
+    max-width: 800px; /* Limit width for better readability */
+    margin: 2rem auto; /* Center the container with some top/bottom margin */
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Subtle gradient background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    color: #333; /* Default text color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+    transition: all 0.3s ease-in-out; /* Smooth transitions for potential future interactions */
+  }
+  
+  .dashboard-header {
+    text-align: center;
+    color: #2c3e50; /* Darker blue-gray */
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e0e0; /* Subtle separator */
+    padding-bottom: 0.75rem;
+  }
+  
+  .user-info {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.6); /* Slightly transparent white background */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .info-item {
+    display: flex; /* Align label and value */
+    justify-content: space-between; /* Space them out */
+    align-items: center;
+    padding: 0.6rem 0;
+    font-size: 1rem;
+    border-bottom: 1px dashed #d1d9e6; /* Dashed separator */
+  }
+  
+  .info-item:last-child {
+    border-bottom: none; /* Remove border from last item */
+  }
+  
+  .info-label {
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .info-value {
+    font-weight: 600;
+    color: #2c3e50;
+    background-color: #e9edf1; /* Light background highlight for value */
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', monospace; /* Monospace for account no */
+  }
+  
+  .balance-section {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(to right, #6a82fb, #fc5c7d); /* Vibrant gradient */
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .balance-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+  
+  .balance-amount {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: 'Arial', sans-serif; /* Clear font for balance */
+  }
+  
+  .balance-error {
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.8;
+  }
+  
+  /* Loading and Error States */
+  .loading-message,
+  .error-message {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 600px;
+  }
+  
+  .loading-message {
+    color: #555;
+    background-color: #f0f0f0;
+    /* Optional: Add a simple CSS spinner or animation here */
+  }
+  
+  .error-message {
+    color: #D8000C; /* Error red */
+    background-color: #FFD2D2; /* Light red background */
+    border: 1px solid #D8000C;
+    font-weight: 500;
+  }
+  
+  /* Basic Responsive Adjustments */
+  @media (max-width: 600px) {
+    .dashboard-container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  
+    .dashboard-header {
+      font-size: 1.8rem;
+    }
+  
+    .info-item {
+      flex-direction: column; /* Stack label and value */
+      align-items: flex-start;
+      padding: 0.8rem 0;
+    }
+  
+    .info-value {
+      margin-top: 0.3rem;
+    }
+  
+    .balance-amount {
+      font-size: 2.2rem;
+    }
+  }

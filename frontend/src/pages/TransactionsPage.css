@@ -1,0 +1,267 @@
+/* ========================================== */
+/* Styles for TransactionsPage                */
+/* Based on the reference DashboardPage style */
+/* ========================================== */
+
+/* --- Page Container --- */
+.transactions-page-container {
+  max-width: 900px; /* Allow slightly wider for tables/lists */
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Page Header (h2) --- */
+.transactions-page-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.75rem;
+}
+
+/* --- Sub Headers (h3) --- */
+.transactions-page-container h3 {
+  color: #34495e;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem; /* Reduced bottom margin */
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-bottom: 1px solid #d1d9e6;
+  padding-bottom: 0.6rem;
+}
+/* Reduce top margin for first h3 after h2 */
+.transactions-page-container h2 + h3 {
+    margin-top: 1.5rem;
+}
+
+
+/* --- Balance Display Section --- */
+/* Target p tags right after the 'Current Balance' h3 */
+.transactions-page-container h3:first-of-type + p { /* Loading message */
+   font-style: italic; color: #555; margin-bottom: 1rem;
+}
+.transactions-page-container h3:first-of-type + p[style*="color: red"] { /* Error message */
+   font-weight: 500; color: #D8000C !important; margin-bottom: 1rem;
+}
+.transactions-page-container h3:first-of-type + p[style*="font-size: 1.5em"] { /* Balance value */
+   color: #1a936f; /* Greenish for balance */
+   margin-top: 0.5rem; /* Space above balance */
+   margin-bottom: 1.5rem; /* Space below balance */
+   text-align: center; /* Center the balance */
+   font-size: 2.2em !important; /* Make it larger */
+   font-weight: 700 !important;
+   letter-spacing: 1px;
+}
+
+/* --- Deposit & Withdrawal Forms --- */
+.transactions-page-container form {
+  margin-top: 1.5rem; /* Space above form */
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* --- Form Elements --- */
+.transactions-page-container form > div {
+  margin-bottom: 1rem; /* Space between label/input and messages/button */
+}
+
+.transactions-page-container form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.transactions-page-container form input[type="number"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #333;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transactions-page-container form input[type="number"]:focus {
+  border-color: #6a82fb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(106, 130, 251, 0.15);
+}
+
+/* --- Form Submission Messages --- */
+/* Target paragraphs within the form based on inline style */
+.transactions-page-container form p[style*="color: red"] { /* Error Message */
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: left;
+  color: #D8000C !important;
+  background-color: #FFD2D2;
+  border: 1px solid #e74c3c;
+}
+
+.transactions-page-container form p[style*="color: green"] { /* Success Message */
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: left;
+  color: #155724 !important;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+/* --- Form Submit Button --- */
+.transactions-page-container form button[type="submit"] {
+  background: linear-gradient(to right, #5c67e3, #4b5cdc);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.25rem; /* Slightly smaller padding */
+  border-radius: 6px;
+  font-size: 0.95rem; /* Slightly smaller font */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem; /* Reduced space */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+/* Specific style for withdraw button */
+.transactions-page-container form:nth-of-type(2) button[type="submit"] { /* Target withdraw form button */
+   background: linear-gradient(to right, #fc5c7d, #e53935); /* Reddish gradient */
+}
+
+
+.transactions-page-container form button[type="submit"]:hover:not(:disabled) {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px); /* Less movement */
+}
+/* Hover for withdraw button */
+.transactions-page-container form:nth-of-type(2) button[type="submit"]:hover:not(:disabled) {
+   background: linear-gradient(to right, #e53935, #c62828);
+}
+
+
+.transactions-page-container form button[type="submit"]:disabled {
+  background: #b0bec5;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* --- Horizontal Rule --- */
+.transactions-page-container hr {
+  border: none;
+  border-top: 1px solid #d1d9e6;
+  margin: 2.5rem 0;
+}
+/* Reduce margin for hr after balance */
+.transactions-page-container h3:first-of-type + p + hr, /* After balance */
+.transactions-page-container h3:first-of-type + p + p + hr { /* After balance error */
+  margin: 1.5rem 0;
+}
+
+
+/* --- Transaction History Section --- */
+/* Messages before the list */
+.transactions-page-container h3:last-of-type + p { /* Loading message */
+   font-style: italic; color: #555; margin-bottom: 1.5rem;
+}
+.transactions-page-container h3:last-of-type + p[style*="color: red"] { /* Error message */
+   font-weight: 500; color: #D8000C !important; margin-bottom: 1.5rem;
+}
+.transactions-page-container h3:last-of-type + p + p:not(ul) { /* "No transactions" message */
+   text-align: center; padding: 1.5rem; font-size: 1rem; border-radius: 8px; margin: 1rem auto;
+   background-color: #e9edf1; color: #555; border: 1px dashed #d1d9e6;
+}
+
+
+/* Transaction List */
+.transactions-page-container ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  border: 1px solid #d1d9e6; /* Add border around the list */
+  border-radius: 8px;
+  overflow: hidden; /* Contain list items */
+  background-color: rgba(255, 255, 255, 0.8); /* Slight background */
+}
+
+/* Transaction List Item */
+.transactions-page-container ul li {
+  padding: 0.8rem 1.25rem;
+  border-bottom: 1px solid #e0e0e0; /* Separator */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex; /* Use flex for potential alignment */
+  justify-content: space-between; /* Align parts if structure allowed */
+  flex-wrap: wrap; /* Wrap on small screens */
+}
+
+.transactions-page-container ul li:last-child {
+  border-bottom: none; /* Remove border from last item */
+}
+
+/* Style specific transaction types (example) */
+/* REMOVED non-standard :contains() selectors as they don't work in CSS */
+/* Styling based on type is now handled via inline styles in the updated JS */
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    /* Example: Make forms stack elements nicely */
+     .transactions-page-container form {
+         padding: 1rem;
+     }
+     .transactions-page-container ul li {
+         padding: 0.7rem 1rem;
+         font-size: 0.9rem;
+     }
+  }
+  
+  @media (max-width: 600px) {
+    .transactions-page-container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  
+    .transactions-page-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .transactions-page-container h3 {
+      font-size: 1.4rem;
+    }
+  
+    .transactions-page-container h3:first-of-type + p[style*="font-size: 1.5em"] { /* Balance value */
+        font-size: 1.8em !important; /* Keep !important to override inline style */
+    }
+  
+     .transactions-page-container form button[type="submit"] {
+         padding: 0.7rem 1rem;
+         font-size: 0.9rem;
+     }
+  
+     /* REMOVED empty rule set for ul li */
+  
+  }

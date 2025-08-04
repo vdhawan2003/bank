@@ -1,0 +1,183 @@
+/* ========================================== */
+/* Styles for SignupPage                      */
+/* Based on the reference DashboardPage style */
+/* ========================================== */
+
+/* --- Page Container --- */
+/* Styles the root div of the SignupPage component */
+.signup-page-container {
+    max-width: 500px; /* Slightly wider than login maybe, for more fields */
+    margin: 3rem auto; /* Adjust vertical margin */
+    padding: 2.5rem 3rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* --- Styles targeting elements assumed to be INSIDE AuthForm --- */
+  /* These styles are likely identical to LoginPage's form styles */
+  
+  /* Assuming AuthForm renders a <form> element */
+  .signup-page-container form {
+    margin-top: 1rem;
+  }
+  
+  /* Assuming AuthForm has a title (e.g., <h2>Sign Up</h2>) */
+  .signup-page-container form h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  /* Assuming AuthForm wraps input fields in divs */
+  .signup-page-container form > div {
+    margin-bottom: 1.25rem;
+  }
+  
+  /* Label Styling */
+  .signup-page-container form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  /* Input Styling (Common types for signup) */
+  .signup-page-container form input[type="text"],
+  .signup-page-container form input[type="email"],
+  .signup-page-container form input[type="password"],
+  .signup-page-container form input[type="tel"] /* Adding tel for phone */
+  {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #333;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .signup-page-container form input[type="text"]:focus,
+  .signup-page-container form input[type="email"]:focus,
+  .signup-page-container form input[type="password"]:focus,
+  .signup-page-container form input[type="tel"]:focus {
+    border-color: #6a82fb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(106, 130, 251, 0.15);
+  }
+  
+  /* Submit Button Styling */
+  .signup-page-container form button[type="submit"] {
+    background: linear-gradient(to right, #5c67e3, #4b5cdc);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .signup-page-container form button[type="submit"]:hover:not(:disabled) {
+    background: linear-gradient(to right, #4b5cdc, #3a4fd1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .signup-page-container form button[type="submit"]:disabled {
+    background: #b0bec5;
+    box-shadow: none;
+    transform: none;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* Error Message Styling WITHIN AuthForm */
+  /* General guess: target any <p> directly inside the form */
+  .signup-page-container form > p {
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #D8000C;
+    background-color: #FFD2D2;
+    border: 1px solid #e74c3c;
+  }
+  /* If AuthForm uses a specific class like 'error-message', use this instead: */
+  /*
+  .signup-page-container form .error-message {
+     ... styles above ...
+  }
+  */
+  
+  /* --- Page Level Messages (AFTER AuthForm) --- */
+  
+  /* Signup Success Message */
+  /* Targets the p tag with inline green style directly inside the container */
+  .signup-page-container > p[style*="color: green"] {
+    padding: 0.75rem 1rem;
+    margin-top: 1.5rem; /* Space after the form */
+    margin-bottom: 0;
+    border-radius: 4px;
+    font-size: 0.95rem; /* Slightly larger */
+    text-align: center;
+    color: #155724 !important; /* Override inline */
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    font-weight: 500;
+  }
+  
+  /* Optional Page Level Error Message (commented out in JSX) */
+  /* Targets the p tag with inline red style directly inside the container */
+  .signup-page-container > p[style*="color: red"] {
+    padding: 0.75rem 1rem;
+    margin-top: 1.5rem; /* Space after the form */
+    margin-bottom: 0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #D8000C !important; /* Override inline */
+    background-color: #FFD2D2;
+    border: 1px solid #e74c3c;
+  }
+  
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 600px) {
+    .signup-page-container {
+      margin: 2rem 1rem;
+      padding: 2rem 1.5rem;
+      max-width: none;
+    }
+  
+    .signup-page-container form h2 {
+      font-size: 1.6rem;
+    }
+  
+     .signup-page-container form {
+        margin-top: 0.5rem;
+     }
+  
+    .signup-page-container form button[type="submit"] {
+        padding: 0.7rem 1rem;
+    }
+  }

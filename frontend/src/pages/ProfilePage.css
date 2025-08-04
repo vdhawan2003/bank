@@ -1,0 +1,250 @@
+/* ========================================== */
+/* Styles for ProfilePage                     */
+/* Based on the reference DashboardPage style */
+/* ========================================== */
+
+/* --- Page Container --- */
+.profile-page-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* --- Page Header (h2) --- */
+  .profile-page-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.75rem;
+  }
+  
+  /* --- Basic User Info Section --- */
+  .profile-page-container > div.basic-user-info { /* Use class if added */
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    line-height: 1.7;
+  }
+  /* Fallback selector if class not added */
+  .profile-page-container > div:first-of-type {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      line-height: 1.7;
+  }
+  
+  
+  .profile-page-container > div p { /* Target p inside the info div */
+    margin-bottom: 0.6rem;
+    font-size: 1rem;
+  }
+  
+  .profile-page-container > div p:last-child { /* Target p inside the info div */
+    margin-bottom: 0;
+  }
+  
+  .profile-page-container > div strong { /* Target strong inside the info div */
+    color: #34495e;
+    margin-right: 0.5em;
+    min-width: 100px;
+    display: inline-block;
+  }
+  
+  /* --- Horizontal Rule --- */
+  .profile-page-container hr {
+    border: none;
+    border-top: 1px solid #d1d9e6;
+    margin: 2.5rem 0;
+  }
+  
+  /* --- Sub Header (h3) for Form --- */
+  .profile-page-container h3 {
+    color: #34495e;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-bottom: 1px solid #d1d9e6;
+    padding-bottom: 0.6rem;
+  }
+  
+  /* --- Loading / Load Error Messages (Before Form) --- */
+  .profile-page-container p.loading-message { /* Use class if added */
+     padding: 1rem; font-size: 1rem; border-radius: 4px; margin-bottom: 1.5rem;
+     text-align: center; color: #555; background-color: #f0f0f0;
+  }
+  /* Fallback selector */
+  .profile-page-container h3 + p:not([style]) { /* Assume loading doesn't have inline style */
+       padding: 1rem; font-size: 1rem; border-radius: 4px; margin-bottom: 1.5rem;
+       text-align: center; color: #555; background-color: #f0f0f0;
+  }
+  
+  
+  .profile-page-container p.load-error-message { /* Use class if added */
+     padding: 1rem; font-size: 1rem; border-radius: 4px; margin-bottom: 1.5rem;
+     text-align: center; color: #8a6d3b; background-color: #fcf8e3;
+     border: 1px solid #faebcc; font-weight: 500;
+  }
+  /* Fallback selector */
+  .profile-page-container p[style*="color: orange"] { /* Load Error message */
+     padding: 1rem; font-size: 1rem; border-radius: 4px; margin-bottom: 1.5rem;
+     text-align: center; color: #8a6d3b !important; background-color: #fcf8e3;
+     border: 1px solid #faebcc; font-weight: 500;
+  }
+  
+  /* --- Form Section --- */
+  .profile-page-container form 
+  /* { */
+    /* No extra styles needed */
+  /* } */
+  
+  /* --- Form Elements --- */
+  .profile-page-container form > div {
+    margin-bottom: 1.25rem;
+  }
+  
+  .profile-page-container form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  
+  .profile-page-container form input[type="text"],
+  .profile-page-container form input[type="date"],
+  .profile-page-container form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #333;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .profile-page-container form textarea {
+    min-height: 80px;
+    resize: vertical;
+    line-height: 1.5;
+  }
+  
+  .profile-page-container form input[type="date"] {
+    line-height: normal;
+  }
+  
+  
+  .profile-page-container form input[type="text"]:focus,
+  .profile-page-container form input[type="date"]:focus,
+  .profile-page-container form textarea:focus {
+    border-color: #6a82fb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(106, 130, 251, 0.15);
+  }
+  
+  /* --- Form Submission Messages --- */
+  /* ** CORRECTED SELECTORS ** */
+  /* Target p tags within the form based on inline style. This is less specific but avoids invalid syntax and :has(). */
+  .profile-page-container form p[style*="color: red"] { /* Error Message */
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem; /* Adjusted margin */
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: left;
+    color: #D8000C !important; /* Keep !important to override inline */
+    background-color: #FFD2D2;
+    border: 1px solid #e74c3c;
+  }
+  
+  .profile-page-container form p[style*="color: green"] { /* Success Message */
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem; /* Adjusted margin */
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: left;
+    color: #155724 !important; /* Keep !important to override inline */
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+  }
+  
+  
+  /* --- Form Submit Button --- */
+  .profile-page-container form button[type="submit"] {
+    background: linear-gradient(to right, #5c67e3, #4b5cdc);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem; /* Space above button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .profile-page-container form button[type="submit"]:hover:not(:disabled) {
+    background: linear-gradient(to right, #4b5cdc, #3a4fd1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .profile-page-container form button[type="submit"]:disabled {
+    background: #b0bec5;
+    box-shadow: none;
+    transform: none;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* --- Responsive Adjustments --- */
+  @media (max-width: 600px) {
+    .profile-page-container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  
+    .profile-page-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .profile-page-container h3 {
+      font-size: 1.4rem;
+    }
+  
+    .profile-page-container > div.basic-user-info, /* Target class if used */
+    .profile-page-container > div:first-of-type { /* Fallback */
+      padding: 1rem;
+      line-height: 1.6;
+    }
+  
+     .profile-page-container > div strong { /* Target strong inside info div */
+         display: block;
+         margin-bottom: 0.2rem;
+     }
+  
+    .profile-page-container form button[type="submit"] {
+        padding: 0.7rem 1rem;
+    }
+  }
